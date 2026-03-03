@@ -16,7 +16,7 @@ export interface Album {
   genre: string;
   coverUrl: string;
   tracks: Track[];
-  source: "musicbrainz" | "discogs";
+  source: "musicbrainz" | "discogs" | "gemini";
   mbid?: string;
   discogsId?: number;
 }
@@ -48,10 +48,14 @@ export interface ServiceSettings {
   discogs: {
     token: string;
   };
+  gemini: {
+    apiKey: string;
+  };
 }
 
 export const DEFAULT_SETTINGS: ServiceSettings = {
   subsonic: { url: "", username: "", password: "" },
   slskd: { url: "", apiKey: "" },
   discogs: { token: "" },
+  gemini: { apiKey: "" },
 };

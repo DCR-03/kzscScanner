@@ -169,6 +169,33 @@ export default function SettingsPage() {
           className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-500"
         />
       </section>
+
+      {/* Gemini AI */}
+      <section className="bg-zinc-900 border border-zinc-800 rounded-xl p-4">
+        <h2 className="text-white font-semibold mb-4">Gemini AI</h2>
+        <p className="text-xs text-zinc-500 mb-3">
+          Required for AI Identify mode. Get an API key at{" "}
+          <a
+            href="https://aistudio.google.com/apikey"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 underline"
+          >
+            aistudio.google.com/apikey
+          </a>
+        </p>
+        <input
+          type="password"
+          placeholder="Gemini API Key"
+          value={settings.gemini?.apiKey ?? ""}
+          onChange={(e) =>
+            updateSettings({
+              gemini: { apiKey: e.target.value },
+            })
+          }
+          className="w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-zinc-500"
+        />
+      </section>
     </div>
   );
 }
